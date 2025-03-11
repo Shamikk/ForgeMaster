@@ -1,40 +1,47 @@
-$ProjectRoot = Read-Host "Enter the full path of your project root (e.g., C:\Users\YourUser\source\repos\SurveyAIApp)"
+# ----------------------------------------
+# ForgeMaster - .NET API Setup Script
+# ----------------------------------------
+# This script:
+# 1. Accepts $ProjectRoot from setup_master.ps1.
+# 2. Ensures the correct directory structure.
+# 3. Asks user whether to run the project.
+# 4. If declined, provides instructions on how to run it manually.
+# ----------------------------------------
 
-if (!(Test-Path -Path $ProjectRoot)) {
-    Write-Host "Error: The specified project directory does not exist!" -ForegroundColor Red
+# ✅ Accept $ProjectRoot from setup_master.ps1
+param (
+    [string]$ProjectRoot
+)
+
+# ✅ Validate input (ensure it's not empty)
+if (-not $ProjectRoot -or $ProjectRoot -eq "") {
+    Write-Host "[ERROR] No project root provided! Exiting." -ForegroundColor Red
     exit
 }
 
-$DotnetApiPath = Join-Path -Path $ProjectRoot -ChildPath "apps\servers\dotnet-api"
+# ✅ Define the correct directory for .NET API
+$DotnetApiPath = Join-Path -Path $ProjectRoot -ChildPath "apps/servers/dotnet-api"
 
+# ✅ Ensure the directory exists
 if (!(Test-Path -Path $DotnetApiPath)) {
     New-Item -ItemType Directory -Path $DotnetApiPath -Force | Out-Null
 }
 
+# ✅ Navigate to the correct directory
 Set-Location -Path $DotnetApiPath
 
-Write-Host "Creating .NET Core API project in $DotnetApiPath..." -ForegroundColor Cyan
+# ✅ Create a new .NET Web API project in this directory
+Write-Host "[INFO] Creating .NET Core API project in '$DotnetApiPath'..." -ForegroundColor Cyan
 dotnet new webapi --force
 
-# List of files that may not exist (to avoid red errors)
-$FilesToRemove = @(
-    "$DotnetApiPath\WeatherForecast.cs",
-    "$DotnetApiPath\Controllers\WeatherForecastController.cs"
-)
+# ✅ Ask the user if they want to run the project
+$RunProject = Read-Host "[INPUT] Do you want to run the project now? (yes/no)"
 
-foreach ($file in $FilesToRemove) {
-    if (Test-Path -Path $file) {
-        Remove-Item -Path $file -Force
-        Write-Host "Removed $file" -ForegroundColor Green
-    } else {
-        Write-Host "File $file not found - skipping" -ForegroundColor Blue
-    }
+if ($RunProject.ToLower() -eq "yes") {
+    Write-Host "[INFO] Running the .NET Core API project..." -ForegroundColor Green
+    dotnet run
+} else {
+    Write-Host "[INFO] You can run the project manually later with the following commands:" -ForegroundColor Yellow
+    Write-Host "`n  cd '$DotnetApiPath'" -ForegroundColor Cyan
+    Write-Host "  dotnet run`n" -ForegroundColor Cyan
 }
-
-Write-Host "Initializing Git repository..." -ForegroundColor Cyan
-git init
-git add .
-git commit -m "Initial commit - .NET Core API setup"
-
-Write-Host "Running the .NET Core API project..." -ForegroundColor Green
-dotnet run
