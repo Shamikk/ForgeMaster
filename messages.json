@@ -1,0 +1,49 @@
+{
+    "themes": [
+        {
+            "name": "The Universe Builder",
+            "start": "🌌 Summoning the cosmic forces to create your project...",
+            "dir_creation": "🪐 Forging planetary directories...",
+            "project_setup": "🚀 Launching the main server into the void...",
+            "cleanup": "☄️ No meteorites found! Skipping unnecessary cleanup...",
+            "git_init": "📜 Inscribing the sacred code into the repository...",
+            "done": "✨ The universe has been created! Your project is ready!"
+        },
+        {
+            "name": "The Battle Setup",
+            "start": "⚔️ Gathering the army for the project battle...",
+            "dir_creation": "🛡️ Fortifying the project structure...",
+            "project_setup": "🏹 Deploying the battle-ready server...",
+            "cleanup": "🔍 No enemies found! Skipping unnecessary cleanup...",
+            "git_init": "📖 Writing battle history into the scrolls...",
+            "done": "🏆 Victory! The project battlefield is ready!"
+        },
+        {
+            "name": "The Cyberpunk Awakening",
+            "start": "🔧 Booting up the neural matrix...",
+            "dir_creation": "💾 Allocating memory sectors for project directories...",
+            "project_setup": "🤖 Deploying AI-powered backend...",
+            "cleanup": "🕵️‍♂️ No corrupted data found! Skipping cleanup...",
+            "git_init": "📡 Transmitting repository data to the cybergrid...",
+            "done": "🎉 The digital empire is online!"
+        },
+        {
+            "name": "The Ancient Kingdom",
+            "start": "🏰 Summoning the royal architects...",
+            "dir_creation": "🛠️ Carving ancient halls and secret tunnels...",
+            "project_setup": "🐉 Awakening the legendary backend dragon...",
+            "cleanup": "📜 No ancient scrolls found! Skipping cleanup...",
+            "git_init": "✍️ Transcribing the royal decree into the code repository...",
+            "done": "👑 The kingdom has been built! Your project stands strong!"
+        },
+        {
+            "name": "The Space Expedition",
+            "start": "🚀 Preparing for interstellar launch...",
+            "dir_creation": "🔭 Constructing orbital modules...",
+            "project_setup": "🛰️ Deploying ground control backend...",
+            "cleanup": "🚀 No debris found in orbit! Skipping cleanup...",
+            "git_init": "📡 Sending first contact signal to GitHub...",
+            "done": "🌠 Mission accomplished! Project station operational!"
+        }
+    ]
+}
