@@ -2,15 +2,16 @@
 # ForgeMaster - .NET API Setup Script
 # ----------------------------------------
 # This script:
-# 1. Accepts $ProjectRoot from setup_master.ps1.
+# 1. Accepts $ProjectRoot and $SelectedTheme from setup_master.ps1.
 # 2. Ensures the correct directory structure.
 # 3. Asks user whether to run the project.
 # 4. If declined, provides instructions on how to run it manually.
 # ----------------------------------------
 
-# ✅ Accept $ProjectRoot from setup_master.ps1
+# ✅ Accept parameters from setup_master.ps1
 param (
-    [string]$ProjectRoot
+    [string]$ProjectRoot,
+    [PSObject]$SelectedTheme
 )
 
 # ✅ Validate input (ensure it's not empty)
@@ -31,17 +32,19 @@ if (!(Test-Path -Path $DotnetApiPath)) {
 Set-Location -Path $DotnetApiPath
 
 # ✅ Create a new .NET Web API project in this directory
-Write-Host "[INFO] Creating .NET Core API project in '$DotnetApiPath'..." -ForegroundColor Cyan
+Write-Host "[INFO] $($SelectedTheme.dotnet.create)" -ForegroundColor Cyan
 dotnet new webapi --force
 
 # ✅ Ask the user if they want to run the project
-$RunProject = Read-Host "[INPUT] Do you want to run the project now? (yes/no)"
+Write-Host "[INPUT] $($SelectedTheme.dotnet.run_prompt)" -ForegroundColor Yellow
+$RunProject = Read-Host
 
 if ($RunProject.ToLower() -eq "yes") {
-    Write-Host "[INFO] Running the .NET Core API project..." -ForegroundColor Green
+    Write-Host "[INFO] $($SelectedTheme.dotnet.running)" -ForegroundColor Green
     dotnet run
-} else {
-    Write-Host "[INFO] You can run the project manually later with the following commands:" -ForegroundColor Yellow
+}
+else {
+    Write-Host "[INFO] $($SelectedTheme.dotnet.manual)" -ForegroundColor Yellow
     Write-Host "`n  cd '$DotnetApiPath'" -ForegroundColor Cyan
     Write-Host "  dotnet run`n" -ForegroundColor Cyan
 }

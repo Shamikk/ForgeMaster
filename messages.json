@@ -2,48 +2,113 @@
     "themes": [
         {
             "name": "The Universe Builder",
-            "start": "Summoning the cosmic forces to create your project...",
-            "dir_creation": "Forging planetary directories...",
-            "project_setup": "Launching the main server into the void...",
-            "cleanup": "No meteorites found! Skipping unnecessary cleanup...",
-            "git_init": "Inscribing the sacred code into the repository...",
-            "done": "The universe has been created! Your project is ready!"
+            "master": {
+                "start": "Summoning the cosmic forces to create your project...",
+                "done": "The universe has been created! Your project is ready!"
+            },
+            "directories": {
+                "start": "Forging planetary directories...",
+                "exists": "A parallel universe detected at this location!",
+                "delete_confirm": "Preparing quantum annihilation sequence...",
+                "deleted": "Parallel universe successfully collapsed!",
+                "create_start": "Weaving the fabric of space-time...",
+                "create_complete": "Cosmic structure materialized successfully!"
+            },
+            "dotnet": {
+                "start": "Launching the main server into the void...",
+                "create": "Assembling the stellar API core...",
+                "run_prompt": "Shall we ignite the cosmic engines? (yes/no)",
+                "running": "Cosmic API engines are now operational!",
+                "manual": "To activate the cosmic engines later, use these ancient incantations:"
+            }
         },
         {
             "name": "The Battle Setup",
-            "start": "Gathering the army for the project battle...",
-            "dir_creation": "Fortifying the project structure...",
-            "project_setup": "Deploying the battle-ready server...",
-            "cleanup": "No enemies found! Skipping unnecessary cleanup...",
-            "git_init": "Writing battle history into the scrolls...",
-            "done": "Victory! The project battlefield is ready!"
+            "master": {
+                "start": "Gathering the army for the project battle...",
+                "done": "Victory! The project battlefield is ready!"
+            },
+            "directories": {
+                "start": "Fortifying the project structure...",
+                "exists": "Enemy forces already occupy this territory!",
+                "delete_confirm": "Preparing the siege weapons...",
+                "deleted": "Enemy fortress successfully demolished!",
+                "create_start": "Constructing defensive fortifications...",
+                "create_complete": "Stronghold construction completed!"
+            },
+            "dotnet": {
+                "start": "Deploying the battle-ready server...",
+                "create": "Forging the mighty API weapons...",
+                "run_prompt": "Shall we sound the war horns? (yes/no)",
+                "running": "The API battalion is marching!",
+                "manual": "To rally the troops later, command them with:"
+            }
         },
         {
             "name": "The Cyberpunk Awakening",
-            "start": "Booting up the neural matrix...",
-            "dir_creation": "Allocating memory sectors for project directories...",
-            "project_setup": "Deploying AI-powered backend...",
-            "cleanup": "No corrupted data found! Skipping cleanup...",
-            "git_init": "Transmitting repository data to the cybergrid...",
-            "done": "The digital empire is online!"
+            "master": {
+                "start": "Booting up the neural matrix...",
+                "done": "The digital empire is online!"
+            },
+            "directories": {
+                "start": "Allocating memory sectors for project directories...",
+                "exists": "Memory sector already occupied by rogue AI!",
+                "delete_confirm": "Initializing data purge protocols...",
+                "deleted": "Memory successfully wiped clean!",
+                "create_start": "Generating virtual architecture...",
+                "create_complete": "Digital infrastructure successfully compiled!"
+            },
+            "dotnet": {
+                "start": "Deploying AI-powered backend...",
+                "create": "Synthesizing API neural networks...",
+                "run_prompt": "Execute neural interface protocol? (yes/no)",
+                "running": "Neural API network online and operational!",
+                "manual": "To jack in later, execute these command lines:"
+            }
         },
         {
             "name": "The Ancient Kingdom",
-            "start": "Summoning the royal architects...",
-            "dir_creation": "Carving ancient halls and secret tunnels...",
-            "project_setup": "Awakening the legendary backend dragon...",
-            "cleanup": "No ancient scrolls found! Skipping cleanup...",
-            "git_init": "Transcribing the royal decree into the code repository...",
-            "done": "The kingdom has been built! Your project stands strong!"
+            "master": {
+                "start": "Summoning the royal architects...",
+                "done": "The kingdom has been built! Your project stands strong!"
+            },
+            "directories": {
+                "start": "Carving ancient halls and secret tunnels...",
+                "exists": "A rival kingdom already stands here!",
+                "delete_confirm": "Summoning the demolition wizards...",
+                "deleted": "The old kingdom has fallen!",
+                "create_start": "Laying the mystical foundations...",
+                "create_complete": "The sacred halls have been constructed!"
+            },
+            "dotnet": {
+                "start": "Awakening the legendary backend dragon...",
+                "create": "Enchanting the API artifacts...",
+                "run_prompt": "Shall we awaken the ancient services? (yes/no)",
+                "running": "The mystical API services have awakened!",
+                "manual": "To summon the services later, speak these words of power:"
+            }
         },
         {
             "name": "The Space Expedition",
-            "start": "Preparing for interstellar launch...",
-            "dir_creation": "Constructing orbital modules...",
-            "project_setup": "Deploying ground control backend...",
-            "cleanup": "No debris found in orbit! Skipping cleanup...",
-            "git_init": "Sending first contact signal to GitHub...",
-            "done": "Mission accomplished! Project station operational!"
+            "master": {
+                "start": "Preparing for interstellar launch...",
+                "done": "Mission accomplished! Project station operational!"
+            },
+            "directories": {
+                "start": "Constructing orbital modules...",
+                "exists": "Space station already exists in this orbit!",
+                "delete_confirm": "Charging up the demolition lasers...",
+                "deleted": "Old station successfully deorbited!",
+                "create_start": "Assembling space station modules...",
+                "create_complete": "Space station construction complete!"
+            },
+            "dotnet": {
+                "start": "Deploying ground control backend...",
+                "create": "Installing the API life support systems...",
+                "run_prompt": "Initialize main thrusters? (yes/no)",
+                "running": "API thrusters are go!",
+                "manual": "To launch the systems later, use these coordinates:"
+            }
         }
     ]
 }

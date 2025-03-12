@@ -17,12 +17,13 @@ $DefaultBasePath = "$env:USERPROFILE\source\repos"
 
 # ✅ Ask for project name (validate input)
 do {
-    $ProjectName = Read-Host "[INPUT] Enter the project name (e.g., SurveyAIApp)"
+    $ProjectName = Read-Host "[INPUT] Enter the project name"
     
     # Check if the name contains only valid characters
     if ($ProjectName -match "^[a-zA-Z0-9_-]+$") {
         break
-    } else {
+    }
+    else {
         Write-Host "[ERROR] Invalid project name! Only letters, numbers, hyphen (-), and underscore (_) are allowed." -ForegroundColor Red
     }
 } while ($true)  # Loop until a valid project name is entered
@@ -47,7 +48,8 @@ do {
         if ($CreateDir -eq "yes") {
             New-Item -ItemType Directory -Path $BasePath -Force | Out-Null
             Write-Host "[OK] Directory '$BasePath' created successfully." -ForegroundColor Green
-        } else {
+        }
+        else {
             Write-Host "[ERROR] Invalid path. Please enter a valid directory." -ForegroundColor Red
         }
     }
@@ -71,19 +73,19 @@ $Messages = Get-Content -Path $MessagesFile | ConvertFrom-Json
 $SelectedTheme = $Messages.themes | Get-Random
 
 # ✅ Display the startup message
-Write-Host "[INFO] $($SelectedTheme.start)" -ForegroundColor Cyan
+Write-Host "[INFO] $($SelectedTheme.master.start)" -ForegroundColor Cyan
 
 # ✅ Run the directory setup script
-Write-Host "[INFO] $($SelectedTheme.dir_creation)" -ForegroundColor Yellow
-& "$ScriptPath\setup_project_directories.ps1" -ProjectRoot $ProjectRoot
+Write-Host "[INFO] $($SelectedTheme.directories.start)" -ForegroundColor Yellow
+& "$ScriptPath\setup_project_directories.ps1" -ProjectRoot $ProjectRoot -SelectedTheme $SelectedTheme
 
 # ✅ Run the .NET Core API setup script (passing the correct project root)
-Write-Host "[INFO] $($SelectedTheme.project_setup)" -ForegroundColor Cyan
-& "$ScriptPath\setup_dotnet_api.ps1" -ProjectRoot $ProjectRoot
+Write-Host "[INFO] $($SelectedTheme.dotnet.start)" -ForegroundColor Cyan
+& "$ScriptPath\setup_dotnet_api.ps1" -ProjectRoot $ProjectRoot -SelectedTheme $SelectedTheme
 
 # ✅ Return to the original directory
 Set-Location -Path $OriginalPath
 Write-Host "[OK] Returning to '$OriginalPath'..." -ForegroundColor Green
 
 # ✅ Final success message
-Write-Host "[OK] $($SelectedTheme.done)" -ForegroundColor Green
+Write-Host "[OK] $($SelectedTheme.master.done)" -ForegroundColor Green

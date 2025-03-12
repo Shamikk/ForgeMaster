@@ -2,16 +2,17 @@
 # ForgeMaster - Project Directory Setup
 # ----------------------------------------
 # This script:
-# 1. Accepts $ProjectRoot from setup_master.ps1.
+# 1. Accepts $ProjectRoot and $SelectedTheme from setup_master.ps1.
 # 2. Checks if the directory already exists.
 # 3. Asks user if they want to delete an existing project.
 # 4. Requires explicit confirmation ("delete") before removing files.
 # 5. Creates the full directory structure for the project.
 # ----------------------------------------
 
-# ✅ Accept $ProjectRoot from setup_master.ps1
+# ✅ Accept parameters from setup_master.ps1
 param (
-    [string]$ProjectRoot
+    [string]$ProjectRoot,
+    [PSObject]$SelectedTheme
 )
 
 # ✅ Validate input (ensure it's not empty)
@@ -22,7 +23,7 @@ if (-not $ProjectRoot -or $ProjectRoot -eq "") {
 
 # ✅ Check if project directory already exists
 if (Test-Path -Path $ProjectRoot) {
-    Write-Host "[WARN] The project directory '$ProjectRoot' already exists." -ForegroundColor Yellow
+    Write-Host "[WARN] $($SelectedTheme.directories.exists)" -ForegroundColor Yellow
     $Confirmation = Read-Host "[INPUT] Do you want to delete it? (yes/no)"
     
     if ($Confirmation.ToLower() -ne "yes") {
@@ -31,6 +32,7 @@ if (Test-Path -Path $ProjectRoot) {
     }
 
     # ✅ Require explicit "delete" confirmation
+    Write-Host "[WARN] $($SelectedTheme.directories.delete_confirm)" -ForegroundColor Yellow
     $FinalConfirmation = Read-Host "[INPUT] Type 'delete' to confirm and erase EVERYTHING in '$ProjectRoot'!"
     
     if ($FinalConfirmation.ToLower() -ne "delete") {
@@ -39,9 +41,8 @@ if (Test-Path -Path $ProjectRoot) {
     }
 
     # ✅ Delete the existing directory
-    Write-Host "[DELETE] Deleting existing directory '$ProjectRoot'..." -ForegroundColor Yellow
+    Write-Host "[DELETE] $($SelectedTheme.directories.deleted)" -ForegroundColor Yellow
     Remove-Item -Path $ProjectRoot -Recurse -Force
-    Write-Host "[OK] Directory deleted successfully." -ForegroundColor Green
 }
 
 # ✅ Define the directory structure
@@ -76,11 +77,11 @@ function Create-Directories {
 }
 
 # ✅ Create project directories
-Write-Host "[INFO] Creating project directories at '$ProjectRoot'..." -ForegroundColor Cyan
+Write-Host "[INFO] $($SelectedTheme.directories.create_start)" -ForegroundColor Cyan
 Create-Directories -BasePath $ProjectRoot -Dirs $Directories
 
 # ✅ Create a README.md file in the root directory
 $ReadmePath = Join-Path -Path $ProjectRoot -ChildPath "README.md"
 New-Item -ItemType File -Path $ReadmePath -Force | Out-Null
 
-Write-Host "[OK] Project structure created successfully at '$ProjectRoot'." -ForegroundColor Green
+Write-Host "[OK] $($SelectedTheme.directories.create_complete)" -ForegroundColor Green
