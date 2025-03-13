@@ -1,114 +1,180 @@
 {
-    "themes": [
-        {
-            "name": "The Universe Builder",
-            "master": {
-                "start": "Summoning the cosmic forces to create your project...",
-                "done": "The universe has been created! Your project is ready!"
-            },
-            "directories": {
-                "start": "Forging planetary directories...",
-                "exists": "A parallel universe detected at this location!",
-                "delete_confirm": "Preparing quantum annihilation sequence...",
-                "deleted": "Parallel universe successfully collapsed!",
-                "create_start": "Weaving the fabric of space-time...",
-                "create_complete": "Cosmic structure materialized successfully!"
-            },
-            "dotnet": {
-                "start": "Launching the main server into the void...",
-                "create": "Assembling the stellar API core...",
-                "run_prompt": "Shall we ignite the cosmic engines? (yes/no)",
-                "running": "Cosmic API engines are now operational!",
-                "manual": "To activate the cosmic engines later, use these ancient incantations:"
-            }
+    "themes": {
+        "standard": {
+            "welcome": "Welcome to the ForgeMaster Project Setup Tool",
+            "directory_created": "Directory structure created successfully",
+            "server_prompt": "Would you like to add a server application? (yes/no)",
+            "client_prompt": "Would you like to add a client application? (yes/no)",
+            "continue_prompt": "Would you like to add another project? (yes/no)",
+            "invalid_input": "Invalid input. Please try again.",
+            "server_installed": "Server application installed successfully",
+            "client_installed": "Client application installed successfully",
+            "completion": "Project setup completed successfully. Your development environment is ready!"
         },
-        {
-            "name": "The Battle Setup",
-            "master": {
-                "start": "Gathering the army for the project battle...",
-                "done": "Victory! The project battlefield is ready!"
-            },
-            "directories": {
-                "start": "Fortifying the project structure...",
-                "exists": "Enemy forces already occupy this territory!",
-                "delete_confirm": "Preparing the siege weapons...",
-                "deleted": "Enemy fortress successfully demolished!",
-                "create_start": "Constructing defensive fortifications...",
-                "create_complete": "Stronghold construction completed!"
-            },
-            "dotnet": {
-                "start": "Deploying the battle-ready server...",
-                "create": "Forging the mighty API weapons...",
-                "run_prompt": "Shall we sound the war horns? (yes/no)",
-                "running": "The API battalion is marching!",
-                "manual": "To rally the troops later, command them with:"
-            }
+        "tech": {
+            "welcome": "Initializing ForgeMaster Development Environment",
+            "directory_created": "Directory structure initialized with status code 0",
+            "server_prompt": "Backend service integration required? (yes/no)",
+            "client_prompt": "Frontend application deployment required? (yes/no)",
+            "continue_prompt": "Additional project components required? (yes/no)",
+            "invalid_input": "Error: Invalid input detected. Please provide valid parameters.",
+            "server_installed": "Backend service deployment completed with exit code 0",
+            "client_installed": "Frontend application deployment completed with exit code 0",
+            "completion": "Environment initialization complete. All systems operational."
         },
-        {
-            "name": "The Cyberpunk Awakening",
-            "master": {
-                "start": "Booting up the neural matrix...",
-                "done": "The digital empire is online!"
-            },
-            "directories": {
-                "start": "Allocating memory sectors for project directories...",
-                "exists": "Memory sector already occupied by rogue AI!",
-                "delete_confirm": "Initializing data purge protocols...",
-                "deleted": "Memory successfully wiped clean!",
-                "create_start": "Generating virtual architecture...",
-                "create_complete": "Digital infrastructure successfully compiled!"
-            },
-            "dotnet": {
-                "start": "Deploying AI-powered backend...",
-                "create": "Synthesizing API neural networks...",
-                "run_prompt": "Execute neural interface protocol? (yes/no)",
-                "running": "Neural API network online and operational!",
-                "manual": "To jack in later, execute these command lines:"
-            }
+        "friendly": {
+            "welcome": "Hey there! Let's set up your awesome project together!",
+            "directory_created": "Great! I've created all the folders you'll need.",
+            "server_prompt": "Do you want to add a cool server app? (yes/no)",
+            "client_prompt": "How about a nice client app? (yes/no)",
+            "continue_prompt": "Want to add more cool stuff to your project? (yes/no)",
+            "invalid_input": "Oops! That doesn't look right. Let's try again!",
+            "server_installed": "Awesome! Your server app is all set up and ready to go!",
+            "client_installed": "Fantastic! Your client app is ready for you to work your magic!",
+            "completion": "All done! Your project is set up and ready for you to create something amazing!"
         },
-        {
-            "name": "The Ancient Kingdom",
-            "master": {
-                "start": "Summoning the royal architects...",
-                "done": "The kingdom has been built! Your project stands strong!"
-            },
-            "directories": {
-                "start": "Carving ancient halls and secret tunnels...",
-                "exists": "A rival kingdom already stands here!",
-                "delete_confirm": "Summoning the demolition wizards...",
-                "deleted": "The old kingdom has fallen!",
-                "create_start": "Laying the mystical foundations...",
-                "create_complete": "The sacred halls have been constructed!"
-            },
-            "dotnet": {
-                "start": "Awakening the legendary backend dragon...",
-                "create": "Enchanting the API artifacts...",
-                "run_prompt": "Shall we awaken the ancient services? (yes/no)",
-                "running": "The mystical API services have awakened!",
-                "manual": "To summon the services later, speak these words of power:"
-            }
+        "professional": {
+            "welcome": "ForgeMaster Project Initialization Utility",
+            "directory_created": "Project structure established according to specifications",
+            "server_prompt": "Would you like to proceed with server application integration? (yes/no)",
+            "client_prompt": "Would you like to proceed with client application integration? (yes/no)",
+            "continue_prompt": "Would you like to proceed with additional project integration? (yes/no)",
+            "invalid_input": "Input validation failed. Please provide a valid response.",
+            "server_installed": "Server application integration completed successfully",
+            "client_installed": "Client application integration completed successfully",
+            "completion": "Project initialization completed successfully. Environment is prepared for development."
         },
-        {
-            "name": "The Space Expedition",
-            "master": {
-                "start": "Preparing for interstellar launch...",
-                "done": "Mission accomplished! Project station operational!"
-            },
-            "directories": {
-                "start": "Constructing orbital modules...",
-                "exists": "Space station already exists in this orbit!",
-                "delete_confirm": "Charging up the demolition lasers...",
-                "deleted": "Old station successfully deorbited!",
-                "create_start": "Assembling space station modules...",
-                "create_complete": "Space station construction complete!"
-            },
-            "dotnet": {
-                "start": "Deploying ground control backend...",
-                "create": "Installing the API life support systems...",
-                "run_prompt": "Initialize main thrusters? (yes/no)",
-                "running": "API thrusters are go!",
-                "manual": "To launch the systems later, use these coordinates:"
-            }
+        "pirate": {
+            "welcome": "Ahoy, matey! Welcome aboard the ForgeMaster ship!",
+            "directory_created": "Arr! The treasure chests be organized and ready for yer loot!",
+            "server_prompt": "Be ye wantin' to add a server to yer fleet? (yes/no)",
+            "client_prompt": "How 'bout a shiny new client vessel? (yes/no)",
+            "continue_prompt": "Ye want more booty for yer project? (yes/no)",
+            "invalid_input": "Blimey! That be not a proper command, ye scallywag!",
+            "server_installed": "Shiver me timbers! Yer server be ready to sail the digital seas!",
+            "client_installed": "Yo-ho-ho! Yer client be shipshape and ready for adventure!",
+            "completion": "Avast! Yer project be complete and ready to set sail! May the winds be at yer back!"
+        },
+        "fantasy": {
+            "welcome": "Greetings, brave adventurer! Welcome to the ForgeMaster's enchanted realm!",
+            "directory_created": "The mystical chambers of your project have been conjured successfully!",
+            "server_prompt": "Shall we summon a powerful server entity to serve your quest? (yes/no)",
+            "client_prompt": "Would you like to craft a magical client interface? (yes/no)",
+            "continue_prompt": "Do you seek to add more arcane components to your creation? (yes/no)",
+            "invalid_input": "Your incantation was miscast! Please try another spell.",
+            "server_installed": "The server entity has been bound to your will! It awaits your command!",
+            "client_installed": "Your client artifact glows with mystical energy, ready to display wonders!",
+            "completion": "The prophecy is fulfilled! Your project stands complete, a monument to your wizardry!"
+        },
+        "gothic_horror": {
+            "welcome": "Welcome, mortal, to the shadowed halls of the ForgeMaster...",
+            "directory_created": "The foundations have been laid in the darkness, awaiting your dreadful creation.",
+            "server_prompt": "Shall we animate a server from the void to do your bidding? (yes/no)",
+            "client_prompt": "Perhaps a client interface, a window into the abyss? (yes/no)",
+            "continue_prompt": "Do you desire more components for your ghastly creation? (yes/no)",
+            "invalid_input": "Your command echoes hollowly... it was not understood by the spirits.",
+            "server_installed": "The server rises from the depths, its cold digital heart beating to your rhythm.",
+            "client_installed": "The client emerges from the mist, a pale reflection of your dark design.",
+            "completion": "It is done. Your creation lives, a testament to your mastery over the digital unknown."
+        },
+        "space_explorer": {
+            "welcome": "Greetings, Commander! Welcome to ForgeMaster Space Station Alpha!",
+            "directory_created": "Habitat modules successfully deployed and pressurized!",
+            "server_prompt": "Shall we launch a server satellite into orbit? (yes/no)",
+            "client_prompt": "Would you like to deploy a client interface module? (yes/no)",
+            "continue_prompt": "Request permission to install additional components? (yes/no)",
+            "invalid_input": "Communication error detected! Please retransmit your command.",
+            "server_installed": "Server satellite successfully deployed and operational!",
+            "client_installed": "Client interface module online and responding to commands!",
+            "completion": "Mission accomplished! Your project is fully operational and ready for its voyage among the stars!"
+        },
+        "cyberpunk": {
+            "welcome": "Hey, choomba! Welcome to ForgeMaster's digital playground!",
+            "directory_created": "Neural pathways mapped and data structures initialized. We're in!",
+            "server_prompt": "Wanna jack in a server daemon to your system? (yes/no)",
+            "client_prompt": "How about a slick client interface with all the chrome? (yes/no)",
+            "continue_prompt": "Need more digital toys for your setup? (yes/no)",
+            "invalid_input": "Flatlined! That input's corrupted, netrunner. Try again.",
+            "server_installed": "Server's up and running hot! The ICE is friendly... for now.",
+            "client_installed": "Client interface is rendering in full neon glory. Looks preem!",
+            "completion": "Setup's complete, edgerunner! Your digital empire is ready to take on the corps!"
+        },
+        "medieval": {
+            "welcome": "Hail and well met, noble creator! The ForgeMaster welcomes thee!",
+            "directory_created": "The foundations of thy castle have been laid with sturdy stone!",
+            "server_prompt": "Dost thou wish to commission a server for thy realm? (yes/no)",
+            "client_prompt": "Shall we craft a client interface for thy subjects? (yes/no)",
+            "continue_prompt": "Wouldst thou like to add more elements to thy kingdom? (yes/no)",
+            "invalid_input": "Thy command is unclear, sire. Pray, speak more plainly.",
+            "server_installed": "Thy server stands ready, as loyal as the finest knight!",
+            "client_installed": "The client has been forged and polished, ready to serve thy will!",
+            "completion": "Rejoice! Thy project is complete and thy digital kingdom awaits thy rule!"
+        },
+        "wild_west": {
+            "welcome": "Howdy, partner! Welcome to the ForgeMaster's frontier!",
+            "directory_created": "We've staked your claim and built the foundations! This land is yours now!",
+            "server_prompt": "You want to set up a server outpost on your property? (yes/no)",
+            "client_prompt": "How about we build a client saloon for the folks to gather? (yes/no)",
+            "continue_prompt": "You fixin' to add more buildings to your settlement? (yes/no)",
+            "invalid_input": "Whoa there! That don't make no sense. Try again, partner.",
+            "server_installed": "Your server's up and running faster than a jackrabbit on a hot day!",
+            "client_installed": "That client's looking mighty fine! Open for business and ready to serve!",
+            "completion": "Well, I'll be! Your project's all set up and ready to tame the digital frontier!"
+        },
+        "underwater": {
+            "welcome": "Dive in! Welcome to the ForgeMaster's underwater laboratory!",
+            "directory_created": "Habitat bubbles have been formed and reinforced against the pressure!",
+            "server_prompt": "Shall we deploy a server pod in the deep? (yes/no)",
+            "client_prompt": "Would you like a client interface with a view of the digital ocean? (yes/no)",
+            "continue_prompt": "Care to add more modules to your underwater complex? (yes/no)",
+            "invalid_input": "Glub glub... that command doesn't float. Try again!",
+            "server_installed": "Server pod deployed and anchored securely in the digital depths!",
+            "client_installed": "Client interface is watertight and displaying beautifully!",
+            "completion": "Eureka! Your underwater project is complete and ready to explore the digital depths!"
+        },
+        "superhero": {
+            "welcome": "Welcome, champion! The ForgeMaster is ready to help you build something SUPER!",
+            "directory_created": "POW! Your project headquarters has been constructed with incredible speed!",
+            "server_prompt": "Shall we activate a powerful server to fight digital crime? (yes/no)",
+            "client_prompt": "How about a dazzling client interface to amaze citizens? (yes/no)",
+            "continue_prompt": "Ready to add more amazing gadgets to your arsenal? (yes/no)",
+            "invalid_input": "ZOINKS! That command didn't register with our super-sensors!",
+            "server_installed": "KAPOW! Your server is online with the strength of a thousand computers!",
+            "client_installed": "WHAM! Your client is ready to display justice across the digital landscape!",
+            "completion": "VICTORY! Your heroic project is complete and ready to save the digital world!"
+        },
+        "steampunk": {
+            "welcome": "Good day to you! Welcome to the ForgeMaster's Mechanized Workshop!",
+            "directory_created": "The brass gears are aligned and the steam chambers pressurized! Your foundation is complete!",
+            "server_prompt": "Shall we construct a server apparatus with the finest cogs and springs? (yes/no)",
+            "client_prompt": "Perhaps a client interface with polished mahogany and brass fittings? (yes/no)",
+            "continue_prompt": "Would you care to add more mechanical marvels to your contraption? (yes/no)",
+            "invalid_input": "The gears grind to a halt! Your instruction was not properly calibrated.",
+            "server_installed": "The server engine hums with perfect precision! Steam pressure optimal!",
+            "client_installed": "The client mechanism is a wonder of modern engineering! All gauges read normal!",
+            "completion": "Eureka! Your magnificent invention is complete! The aether shall carry your digital dreams!"
+        },
+        "ancient_egypt": {
+            "welcome": "Greetings, Pharaoh! The ForgeMaster welcomes you to your digital kingdom on the Nile!",
+            "directory_created": "Your project pyramid has been constructed, its chambers aligned with the digital stars!",
+            "server_prompt": "Shall we summon a server to serve in your royal court? (yes/no)",
+            "client_prompt": "Would you like a client interface worthy of the gods? (yes/no)",
+            "continue_prompt": "Do you wish to add more treasures to your digital tomb? (yes/no)",
+            "invalid_input": "The hieroglyphs are unclear! Please inscribe your command again.",
+            "server_installed": "Your server stands ready like Anubis at the gates!",
+            "client_installed": "The client shines like gold in the desert sun, ready to display your glory!",
+            "completion": "It is done! Your project stands eternal, like the mighty pyramids themselves!"
+        },
+        "alien_technology": {
+            "welcome": "Greetings, Earth-being. ForgeMaster's advanced alien technology is at your disposal.",
+            "directory_created": "Quantum structures materialized. Your project exists in multiple dimensions simultaneously.",
+            "server_prompt": "Shall we grow a bio-organic server entity for your needs? (yes/no)",
+            "client_prompt": "Would you like a telepathic client interface that anticipates your thoughts? (yes/no)",
+            "continue_prompt": "Do you require additional extraterrestrial components? (yes/no)",
+            "invalid_input": "Communication error. Your primitive language patterns were not recognized.",
+            "server_installed": "Server entity has achieved consciousness and awaits your commands.",
+            "client_installed": "Client interface has bonded with your project's neural network. Symbiosis complete.",
+            "completion": "Your project has transcended ordinary technology. It now exists beyond conventional understanding."
         }
-    ]
+    }
 }

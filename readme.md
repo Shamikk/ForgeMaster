@@ -1,142 +1,101 @@
-### **🔥 ForgeMaster – The Ultimate Project Bootstrapper 🔥**
+# ForgeMaster Project Setup Tool
 
-_"Where code is forged into greatness!"_
+A modular PowerShell script solution for setting up development project structures with server and client applications.
 
----
+## Features
 
-## **🛠️ What is ForgeMaster?**
+- Creates a standardized directory structure for development projects
+- Allows selection and installation of server and client applications
+- Uses themed messages for a more engaging user experience
+- Modular design with separate scripts for different functionalities
+- Validates user input and handles errors gracefully
 
-**ForgeMaster** is the **ultimate PowerShell tool** for setting up new software projects **automatically**.  
-It creates a **clean, structured directory**, initializes your tech stack, sets up **Git**, and even delivers a **random epic theme** every time you run it. 🚀
+## Directory Structure Created
 
-⚡ **No more manual setup**. Just **summon** your project and start coding!
+- `apps`
+  - `servers` (contains selected server projects)
+  - `clients` (contains selected client projects)
+- `workspace`
+  - `designs`
+  - `reports`
+  - `ideas`
+  - `research`
+- `infra`
+  - `docker`
+  - `scripts`
+  - `configs`
+- `libs`
+  - `shared`
+  - `ai`
+- `tests`
+  - `integration`
+  - `unit`
+- `docs`
 
----
+## Available Projects
 
-## **🔥 Features**
+### Server Projects
 
-✅ **Customizable Project Structure** – Choose your root directory & project name.  
-✅ **Multi-Tech Support** – Installs .NET, Python, Node.js servers, and Vue/React clients.  
-✅ **Epic Themed Messages** – Every setup comes with a **randomly chosen theme** (e.g., _Cyberpunk, Medieval Kingdom, Space Expedition_).  
-✅ **Safe & Interactive** – No accidental overrides, with **double confirmations** before deleting existing projects.  
-✅ **Git Initialization** – Automatically sets up your repo & commits the first version.  
-✅ **No Red Error Anxiety** – Handles missing files **gracefully**, replacing scary errors with **calm blue messages**.  
-✅ **Future-Proof & Expandable** – You can **modify or extend** it with additional setups.
+1. .NET API
+2. FastAPI
+3. Django REST
+4. Express.js
 
----
+### Client Projects
 
-## **🚀 How to Use**
+1. Vue/Nuxt
+2. Vue/Vite
+3. React/Next.js
 
-### **1️⃣ Clone the Repository**
+## Script Files
 
-```sh
-git clone https://github.com/YourUsername/ForgeMaster.git
-cd ForgeMaster
-```
+- `setup_master.ps1` - Main script that orchestrates the entire process
+- `setup_project_directories.ps1` - Handles directory creation with proper validation
+- `setup_server_project.ps1` - Handles server project installation
+- `setup_client_project.ps1` - Handles client project installation
+- `messages.json` - Contains themed messages for user interaction
 
-### **2️⃣ Run the Master Script**
+## Usage
 
-```powershell
-.\setup_master.ps1
-```
+1. Run the main script:
 
-### **3️⃣ Follow the Prompts**
+   ```powershell
+   pwsh -NoProfile -ExecutionPolicy Bypass -File setup_master.ps1
+   ```
 
-- Enter a **project name**.
-- Choose a **custom path** or use the default (`C:\Users\You\source\repos`).
-- If the directory exists, confirm whether you want to **delete it or exit**.
-- Let **ForgeMaster** do the rest! 💥
+2. Enter a project name (only letters, numbers, hyphens, and underscores allowed)
 
----
+3. Enter a base path or press Enter to use the default (`$env:USERPROFILE\source\repos`)
 
-## **🎭 Epic Themes Include**
+4. Follow the interactive prompts to select server and client projects
 
-Every time you run **ForgeMaster**, it selects a **random theme** to make your setup _legendary!_ 🎭
+5. The script will create the directory structure and install the selected projects
 
-| Theme                          | Description                                                         |
-| ------------------------------ | ------------------------------------------------------------------- |
-| **The Universe Builder** 🌌    | _Summon planets, forge directories, and deploy cosmic servers._ 🚀  |
-| **The Battle Setup** ⚔️        | _Assemble an army of code and prepare for battle!_ 🏹               |
-| **The Cyberpunk Awakening** 🤖 | _Hack the matrix and deploy AI-driven infrastructure._ 💾           |
-| **The Ancient Kingdom** 🏰     | _Carve stone halls and awaken legendary dragons (APIs)._ 🐉         |
-| **The Space Expedition** 🚀    | _Launch your code into orbit and contact the GitHub mothership._ 📡 |
+## Message Themes
 
-**Example output (random theme pick):**
+The script uses themed messages from `messages.json` to provide a more engaging user experience. The themes include:
 
-```
-🏰 Summoning the royal architects...
-🛠️ Carving ancient halls and secret tunnels...
-🐉 Awakening the legendary backend dragon...
-📜 No ancient scrolls found! Skipping cleanup...
-✍️ Transcribing the royal decree into the code repository...
-👑 The kingdom has been built! Your project stands strong!
-```
+- Standard
+- Tech
+- Friendly
+- Professional
+- Pirate
+- Fantasy
+- Gothic Horror
+- Space Explorer
+- Cyberpunk
+- Medieval
+- Wild West
+- Underwater
+- Superhero
+- Steampunk
+- Ancient Egypt
+- Alien Technology
 
-✨ _Every run is a new adventure!_ ✨
+## Technical Notes
 
----
-
-## **📂 Project Structure**
-
-Once **ForgeMaster** runs, your project will have a **clean, structured layout**:
-
-```
-ProjectName/
-├── apps/
-│   ├── servers/
-│   │   ├── dotnet-api/      # .NET Core Web API
-│   │   ├── python-api/      # Python Django or FastAPI
-│   │   ├── js-server/       # Node.js backend
-│   ├── clients/
-│   │   ├── vue-nuxt/        # Vue.js + Nuxt frontend
-│   │   ├── vue-vite/        # Vue.js + Vite frontend
-│   │   ├── react-next/      # React.js + Next.js frontend
-├── workspace/               # Docs, research, reports
-├── infra/                   # CI/CD, Docker, Kubernetes configs
-├── tests/                   # Unit & integration tests
-└── README.md                # Project overview
-```
-
----
-
-## **⚡ Requirements**
-
-✔ **Windows with PowerShell** (Tested on **PowerShell 7+**)  
-✔ **.NET SDK** (for .NET Core projects)  
-✔ **Git installed** (for repo initialization)
-
----
-
-## **🛠️ Future Plans**
-
-🚀 **Expandable for more languages & frameworks**  
-🛠️ **Custom user-defined project templates**  
-📦 **Pre-installed dependencies & CI/CD integration**
-
----
-
-## **🌟 Contributing**
-
-Want to add **more themes**, **tech stack setups**, or **enhancements**?
-
-1. **Fork this repo**
-2. **Make changes** (e.g., new themes, new project types)
-3. **Submit a Pull Request**!
-
-All **ForgeMasters** are welcome! 🔥
-
----
-
-## **📜 License**
-
-**MIT License** – Free to use, modify, and summon as many projects as you desire.
-
----
-
-## **🚀 Ready to Forge Your Next Project?**
-
-```powershell
-.\setup_master.ps1
-```
-
-⚡ **Let the forging begin!** 🔨🔥
+- The script is designed to be modular and easy to maintain
+- Each script file has a specific responsibility
+- User input is validated to prevent errors
+- The script handles existing directories with confirmation prompts
+- The script returns to the original directory when complete

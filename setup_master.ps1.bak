@@ -1,50 +1,4 @@
 # ----------------------------------------
-# AUTOMATED TEST MODE - DO NOT MODIFY
-# ----------------------------------------
-# This section is automatically added for testing purposes
-# It will be removed after testing is complete
-# ----------------------------------------
-
-# Define automated inputs
-$script:AutomatedInputs = @(
-    "EmptyProject"
-    "C:\Users\mikol\source\repos\ForgeMaster\tests\tmp\NoProjects"
-    "no"
-    "no"
-    "no"
-
-)
-$script:InputIndex = 0
-
-# Override Read-Host function
-function Read-Host {
-    param (
-        [string]$Prompt
-    )
-    
-    # Display the prompt
-    Write-Host "$Prompt" -ForegroundColor Yellow
-    
-    # Get the next input from the predefined list
-    if ($script:InputIndex -lt $script:AutomatedInputs.Count) {
-        $input = $script:AutomatedInputs[$script:InputIndex]
-        $script:InputIndex++
-        
-        # Display the simulated input
-        Write-Host $input -ForegroundColor Magenta
-        
-        return $input
-    }
-    else {
-        Write-Host "ERROR: No more automated inputs available!" -ForegroundColor Red
-        return ""
-    }
-}
-
-# ----------------------------------------
-# END OF AUTOMATED TEST MODE
-# ----------------------------------------
-# ----------------------------------------
 # ForgeMaster - Master Setup Script
 # ----------------------------------------
 # This script initializes a new project by:
@@ -181,4 +135,3 @@ Write-Host "`n" + (Get-ThemedMessage -MessageType "completion" -MessagesJson $Me
 
 # Final message with project path
 Write-Host "Project created at: $ProjectRoot" -ForegroundColor Cyan
-
