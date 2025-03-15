@@ -38,6 +38,30 @@ function Load-Messages {
     }
 }
 
+# Check if directory structure exists
+function Test-DirectoryStructure {
+    param (
+        [string]$ProjectRoot
+    )
+    
+    $directories = @(
+        "apps/servers",
+        "apps/clients",
+        "docs",
+        "scripts",
+        "tools"
+    )
+    
+    foreach ($dir in $directories) {
+        $path = Join-Path -Path $ProjectRoot -ChildPath $dir
+        if (Test-Path $path) {
+            return $true
+        }
+    }
+    
+    return $false
+}
+
 # Create base directory structure
 function Create-DirectoryStructure {
     param (
@@ -193,6 +217,20 @@ function Start-Installation {
     if (!(Test-Path $targetDir)) {
         New-Item -Path $targetDir -ItemType Directory -Force | Out-Null
         Write-Host "Created target directory: $targetDir" -ForegroundColor Green
+    }
+    else {
+        # Check if directory structure already exists
+        if (Test-DirectoryStructure -ProjectRoot $targetDir) {
+            Write-Host "Warning: Project structure already exists in $targetDir" -ForegroundColor Yellow
+            $continue = Read-Host "Do you want to continue with this directory? (yes/no)"
+            
+            if ($continue -ne "yes" -and $continue -ne "y") {
+                Write-Host "Installation cancelled. Please run the script again with a different target directory." -ForegroundColor Red
+                return
+            }
+            
+            Write-Host "Continuing with existing directory structure..." -ForegroundColor Cyan
+        }
     }
     
     # Create directory structure in the target directory
